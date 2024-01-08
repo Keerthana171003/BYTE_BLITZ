@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Data</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image:url("https://i.pinimg.com/564x/51/de/a3/51dea358cef428a0056d2093b54de8ee.jpg");
+      }
+
+    .header {
+      color: black;
+      text-align: center;
+      background-color: black;
+      color: white;
+      width: 100%;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav {
+      background-color: black;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 20px;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav a {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      margin-right: 18px;
+    }
+
+    .nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #formData {
+      background-color: white;
+      margin: 20px;
+      width: 1150px; /* Adjust the width as needed */
+      max-width: 3000px;
+      box-sizing: border-box;
+      color: black;
+      border: 0px solid gray;
+      box-shadow: 10px 10px 5px lightgray;
+      border-color: black;
+      border-width: 1px;
+
+    }
+
+    .fieldBox {
+      padding: 20px;
+      border: 1px solid black;
+      border-radius: 8px;
+      width: 45%; /* Adjust the width of each box */
+      margin: 1%; /* Adjust the margin between boxes */
+      box-sizing: border-box;
+      display: inline-block; /* Display boxes in a line */
+      vertical-align: top; /* Align boxes to the top */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      font-size: 20px; /* Default font size for all boxes */
+      overflow: hidden; /* Hide overflowing content */
+    }
+
+    .titleBox {
+      word-wrap: break-word;
+  max-height: 100%;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 45%; /* Adjust the width of each box */
+  height: 100px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  overflow: hidden;
+    }
+
+    .descriptionBox {
+      word-wrap: break-word; /* Break long words to prevent overflow */
+      max-height: 100%; /* Ensure content doesn't overflow vertically */
+      border: 1px solid black;
+      border-radius: 8px;
+      height: 180px;
+      width: 70%; /* Adjust the width of each box */
+      margin: 1%; /* Adjust the margin between boxes */
+      box-sizing: border-box;
+      display: inline-block; /* Display boxes in a line */
+      vertical-align: top; /* Align boxes to the top */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      font-size: 20px; /* Default font size for all boxes */
+      overflow: hidden;
+      margin-left: 20px;
+      background-color: white;
+    }
+
+    .conditionBox{
+      word-wrap: break-word;
+  max-height: 100%;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 49%; /* Adjust the width of each box */
+  height: 100px;
+  background-color: white;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  overflow: hidden;
+  margin-top: 20px;
+    }
+
+    .languageBox{
+      word-wrap: break-word; /* Break long words to prevent overflow */
+      max-height: 100%; /* Ensure content doesn't overflow vertically */
+      border: 1px solid black;
+      border-radius: 8px;
+      height: 180px;
+      margin-top: 20px;
+      width: 24%; /* Adjust the width of each box */
+      margin: 1%; /* Adjust the margin between boxes */
+      box-sizing: border-box;
+      display: inline-block; /* Display boxes in a line */
+      vertical-align: top; /* Align boxes to the top */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      font-size: 20px; /* Default font size for all boxes */
+      overflow: hidden;
+      background-color:white;
+    }
+
+    .solutionBox {
+      word-wrap: break-word; /* Break long words to prevent overflow */
+      max-height: 100%; /* Ensure content doesn't overflow vertically */
+      padding: 20px;
+      margin-left: 20px;;
+      border: 1px solid black;
+      border-radius: 8px;
+      background-color: white;
+      height: 250px;
+      width: 47%; /* Adjust the width of each box */
+      box-sizing: border-box;
+      display: inline-block; /* Display boxes in a line */
+      vertical-align: top; /* Align boxes to the top */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      font-size: 20px; /* Default font size for all boxes */
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    
+    .testCaseBox {
+      word-wrap: break-word; /* Break long words to prevent overflow */
+      max-height: 100%; /* Ensure content doesn't overflow vertically */
+      padding: 20px;
+      height: 250px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 8px;
+      width: 47%; /* Adjust the width of each box */
+      margin: 1%; /* Adjust the margin between boxes */
+      box-sizing: border-box;
+      display: inline-block; /* Display boxes in a line */
+      vertical-align: top; /* Align boxes to the top */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      font-size: 20px; /* Default font size for all boxes */
+      overflow: hidden;
+    }
+
+  </style>
+</head>
+<body >
+
+  <div class="header">
+    <h1 style="font-size: 30px;">FORM DATA</h1>
+  </div>
+
+  <div class="nav">
+    <a href="home.html">HOME</a>
+    <a href="profile.html">PROFILE</a>
+    <a href="data_form.html">CHALLENGE CREATION</a>
+    <a href="analytics.html">PARTICIPANT ANALYTICS</a>
+    <a href="leaderboard.html">LEADERBOARD</a>
+    <a href="forum.html">FORUM</a>
+  </div>
+
+  <div id="formData">
+    <!-- The form data will be displayed here -->
+  </div>
+
+  <script>
+    // Retrieve form data from sessionStorage
+    var challengeTitle = sessionStorage.getItem('challengeTitle');
+    var challengeDescription = sessionStorage.getItem('challengeDescription');
+    var challengeCondition = sessionStorage.getItem('challengeCondition');
+    var preferredLanguage = sessionStorage.getItem('preferredLanguage');
+    var solution = sessionStorage.getItem('solution');
+    var testCases = sessionStorage.getItem('testCases');
+
+    // Display form data on the page
+    var formDataDiv = document.getElementById('formData');
+    formDataDiv.innerHTML = `
+      <div class="fieldBox titleBox">
+        <strong>TITLE</strong>
+        <div>${challengeTitle}</div>
+      </div>
+      
+      <div class="fieldBox conditionBox">
+        <strong>BOUNDARY CONDITION</strong>
+        <div>${challengeCondition}</div>
+      </div>
+
+      <div class="fieldBox descriptionBox">
+        <strong>DESCRIPTION</strong>
+        <div>${challengeDescription}</div>
+      </div>
+
+      <div class="fieldBox languageBox">
+        <strong>PREFERRED LANGUAGES</strong>
+        <div>${preferredLanguage}</div>
+      </div>
+      <div class="fieldBox solutionBox">
+        <strong>SOLUTION</strong>
+        <div>${solution}</div>
+      </div>
+      <div class="fieldBox testCaseBox">
+        <strong>TEST CASES</strong>
+        <div>${testCases}</div>
+      </div>
+    `;
+  </script>
+
+</body>
+</html>
